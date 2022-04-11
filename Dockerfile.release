@@ -1,4 +1,4 @@
-FROM golang:1.18.0-alpine3.15 as builder
+FROM arm64v8/golang:1.18.0-alpine3.15 as builder
 
 WORKDIR /app
 

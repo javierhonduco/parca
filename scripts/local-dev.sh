@@ -17,7 +17,7 @@ function up() {
         echo "----------------------------------------------------------"
     else
         ctlptl create registry ctlptl-registry || echo 'Registry already exists'
-        minikube start -p parca --driver=virtualbox --kubernetes-version=v1.22.3 --cpus=4 --disk-size=80000mb --docker-opt dns=8.8.8.8
+        minikube start -p parca --driver=docker --kubernetes-version=v1.22.3 --cpus=4 --disk-size=80000mb --docker-opt dns=8.8.8.8
         # minikube start -p parca --driver=kvm2 --kubernetes-version=v1.22.3 --cpus=12 --memory=40gb --disk-size=120gb --docker-opt dns=8.8.8.8
     fi
 
@@ -35,5 +35,5 @@ function down() {
 # Deploys the dev env into the minikube cluster
 function deploy() {
     # Deploy all generated manifests
-    kubectl apply -R -f ./deploy/tilt
+    minikube kubectl -- apply -R -f ./deploy/tilt
 }
