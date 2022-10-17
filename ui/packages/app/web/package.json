@@ -32,7 +32,7 @@
     "@parca/icons": "^0.12.2",
     "@parca/parser": "^0.12.3",
     "@parca/profile": "^0.12.14",
-    "@parca/store": "^0.12.14",
+    "@parca/store": "^0.16.49",
     "@svgr/webpack": "^6.2.0",
     "@testing-library/jest-dom": "^5.15.0",
     "@testing-library/react": "^13.0.0",
